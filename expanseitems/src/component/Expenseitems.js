@@ -1,5 +1,6 @@
 import ExpenseDate from './ExpenseDate';
 import './Expence.css';
+import ExpenseDetails from './ExpenseDetails';
 
 function Expenseitems(props){
 
@@ -7,11 +8,7 @@ function Expenseitems(props){
         <>
         <div className="expense-item">
             <ExpenseDate date={props.date}/>
-            <div className="expense-item__description">
-                <h3>{props.title}</h3>
-                <h3>{props.LocationOfExpenditure}</h3>
-                <div className="expense-item__price">${props.price}</div>
-            </div>
+            <ExpenseDetails title={props.title}  price={props.price} Location={props.Location}/> 
         </div>
         </>
     )
