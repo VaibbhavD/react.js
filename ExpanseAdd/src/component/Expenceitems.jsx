@@ -1,11 +1,15 @@
+
 function Expenceitems(){
 
     return (
         <>
-         <h1>Expense Items</h1>
-         <li>Food Rs 10</li>
-         <li>Petrol Rs 100</li>
-         <li>Movies Rs 200</li>
+        <div className="expense-item f ">
+            <div className="">March 28th 2023</div>
+            <div className="expense-item__description">
+                <h3>Car Insuramce</h3>
+                <div className="expense-item__price">$295</div>
+            </div>
+        </div>
         </>
     )
    }
