@@ -2,7 +2,7 @@ import ExpenseDate from './ExpenseDate';
 import './Expence.css';
 import ExpenseDetails from './ExpenseDetails';
 
-function Expenseitems(props){
+const Expenseitems=(props)=>{
 
     return (
         <>
