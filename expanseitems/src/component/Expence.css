@@ -6,12 +6,20 @@
     padding: 0.5rem;
     margin: 1rem 0;
     border-radius: 12px;
-    background-color: rgb(244, 103, 103);
+    background-color: rgb(44, 35, 35);
     color: white;
     font-size: 20px;
     width: 60rem;
     padding: auto;
     margin-top: 2rem;
+    margin:auto;
+    margin-top: 10px;
+  }
+  body{
+    background-color: #3a3a3a;
+    text-align: center;
+    color: aliceblue;
+    
   }
   
   .expense-item__description {
@@ -39,7 +47,7 @@
     font-size: 1rem;
     font-weight: bold;
     color: white;
-    background-color: #08ed13;
+    background-color: #30ae36;
     border: 1px solid white;
     padding: 0.5rem;
     border-radius: 12px;
@@ -62,4 +70,24 @@
       font-size: 1.25rem;
       padding: 0.5rem 1.5rem;
     }
+  }
+  .title-div{
+    width: 10rem;
+    text-align: center;
+  }
+  .location-div{
+    width: 12rem;
+    text-align: center;
+  }
+  .deletebtn{
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: #ed4908;
+    border: 1px solid white;
+    padding: 0.5rem;
+    border-radius: 12px;
+    text-align: right;
+    font-size: 1.25rem;
+      padding: 0.5rem 1rem;
   }
