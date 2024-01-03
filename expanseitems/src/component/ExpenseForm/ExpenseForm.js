@@ -3,21 +3,21 @@ import './ExpenseForm.css';
 
 
 function ExpenseForm(){
-  const[title,enteredtitle]=useState('')
-  const[amount,enteredAmount]=useState('')
-  const[date,enteredDate]=useState('')
+  const[enteredtitle,setenteredtitle]=useState('')
+  const[enteredAmount,setenteredAmount]=useState('')
+  const[enteredDate,setenteredDate]=useState('')
  
   const titlehandler=(e)=>{
-    enteredtitle(e.target.value)
-    console.log(title)
+    setenteredtitle(e.target.value)
+    console.log(enteredtitle)
   }
   const amounthandler=(e)=>{
-    enteredAmount(e.target.value)
-    console.log(amount)
+    setenteredAmount(e.target.value)
+    console.log(enteredAmount)
   }
   const datehandler=(e)=>{
-    enteredDate(e.target.value)
-    console.log(date)
+    setenteredDate(e.target.value)
+    console.log(enteredDate)
   }
 
     return(
@@ -28,7 +28,7 @@ function ExpenseForm(){
                   type="text"
                   placeholder="Title"
                   className="input"
-                  value={title}
+                  value={enteredtitle}
                   onChange={titlehandler}
                 />
             </div>
@@ -38,7 +38,7 @@ function ExpenseForm(){
                   type="number"
                   placeholder="Amount"
                   className="input"
-                  value={amount}
+                  value={enteredAmount}
                   onChange={amounthandler}
                 />
             </div>
@@ -48,7 +48,7 @@ function ExpenseForm(){
                   type="date"
                   placeholder="date"
                   className="input"
-                  value={date}
+                  value={enteredDate}
                   onChange={datehandler}
                 />
             </div>
