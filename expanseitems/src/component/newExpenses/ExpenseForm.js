@@ -20,8 +20,8 @@ function ExpenseForm(props){
     e.preventDefault()
     const expesedata=({
     title:enteredtitle,
-    amount:enteredAmount,
-    date:new Date(enteredDate)
+    price:enteredAmount,
+    date:new Date(enteredDate),
     })
     props.onsavedata(expesedata)
     setenteredtitle('');

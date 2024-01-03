@@ -9,7 +9,6 @@ function NewExpense(props){
             id: Math.random().toString()
         }
         props.addexpense(expensedata)
-        console.log("New")
     }
     return(
 

@@ -19,7 +19,7 @@ const Expenseitems=(props)=>{
         setexpense(100)
     }
     return ( data?
-        (
+       (
         <div className="expense-item">
             <ExpenseDate date={props.date}/>
             <ExpenseDetails title={title}  price={expense} Location={props.Location}/> 
@@ -27,7 +27,7 @@ const Expenseitems=(props)=>{
             <button className="btn" onClick={Updatehandle}>Update</button>
             <button className="btn" onClick={ChangeExpense}>Next</button>
         </div>
-    ):null)
+        ):null)
    }
 
    export default Expenseitems

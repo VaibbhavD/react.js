@@ -8,8 +8,9 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1rem;
-    background-color: rgb(56, 51, 53);
-    box-shadow: 0 2px 8px white;
+    /* background-color: #21262d; */
+    background-color: #484f58;
+    /* box-shadow: 0 2px 8px white; */
     font-size: 1.5rem;
     border-radius: 1rem;
   }

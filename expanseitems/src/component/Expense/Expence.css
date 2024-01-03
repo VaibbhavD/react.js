@@ -1,3 +1,7 @@
+.display-items{
+  height: 30rem;
+  overflow: auto;
+}
 .expense-item {
     display: flex;
     justify-content: center;
@@ -5,7 +9,9 @@
     padding: 0.5rem;
     margin: 1rem 0;
     border-radius: 12px;
-    background-color: rgb(64, 55, 55);
+    /* background-color:#21262d ; */
+    background-color: #484f58;
+
     color: white;
     font-size: 18px;
     width: 60rem;
@@ -15,7 +21,7 @@
     margin-top: 10px;
   }
   body{
-    background-color: #2e2929;
+    background-color: #484f58;
     text-align: center;
     color: aliceblue;
     
