@@ -2,11 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     padding: 0.5rem;
     margin: 1rem 0;
     border-radius: 12px;
-    background-color: rgb(44, 35, 35);
+    background-color: rgb(64, 55, 55);
     color: white;
     font-size: 18px;
     width: 60rem;
@@ -16,7 +15,7 @@
     margin-top: 10px;
   }
   body{
-    background-color: #3a3a3a;
+    background-color: #2e2929;
     text-align: center;
     color: aliceblue;
     
@@ -73,6 +72,14 @@
       font-size: 0.8rem;
       padding: 0.8rem 0.6rem;
     }
+    .btn{
+      font-size: 0.8rem;
+      padding: 0.8rem 0.6rem;
+    }
+    .btn-form{
+      font-size: 0.8rem;
+      padding: 0.8rem 0.6rem;
+    }
   }
   .title-div{
     width: 10rem;
@@ -102,3 +109,4 @@
     border-radius: 12px;
     margin-left: 1rem;
   }
+  

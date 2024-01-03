@@ -1,4 +1,5 @@
 import Expenseitems from "./component/Expenseitems"
+import ExpenseForm from "./component/ExpenseForm/ExpenseForm"
 function App() {
   
     const arr=[
@@ -30,7 +31,8 @@ function App() {
 
       return (
     <>
-     <h1>Let's get Strated</h1>
+     <h1>Expense Items</h1>
+     <ExpenseForm/>
     <Expenseitems date={arr[1].date}   title={arr[1].title} price={arr[1].price} Location={arr[1].Location} ></Expenseitems>
     <Expenseitems date={arr[0].date}   title={arr[0].title} price={arr[0].price} Location={arr[0].Location} ></Expenseitems>
     <Expenseitems date={arr[2].date}   title={arr[2].title} price={arr[2].price} Location={arr[2].Location} ></Expenseitems>
