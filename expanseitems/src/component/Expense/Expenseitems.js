@@ -27,7 +27,7 @@ const Expenseitems=(props)=>{
             <button className="btn" onClick={Updatehandle}>Update</button>
             <button className="btn" onClick={ChangeExpense}>Next</button>
         </div>
-    ):<></>)
+    ):null)
    }
 
    export default Expenseitems

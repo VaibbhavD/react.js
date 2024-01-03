@@ -1,38 +1,38 @@
 import React, { useState } from "react";
 import './ExpenseForm.css';
 
-
-function ExpenseForm(){
+function ExpenseForm(props){
   const[enteredtitle,setenteredtitle]=useState('')
   const[enteredAmount,setenteredAmount]=useState('')
   const[enteredDate,setenteredDate]=useState('')
  
   const titlehandler=(e)=>{
     setenteredtitle(e.target.value)
-    console.log(enteredtitle)
   }
   const amounthandler=(e)=>{
     setenteredAmount(e.target.value)
-    console.log(enteredAmount)
   }
   const datehandler=(e)=>{
     setenteredDate(e.target.value)
-    console.log(enteredDate)
   }
 
    const handlerSubmit=(e)=>{
     e.preventDefault()
-    const expensedata={
+    const expesedata=({
     title:enteredtitle,
     amount:enteredAmount,
     date:new Date(enteredDate)
-    }
-    console.log(expensedata)
-   }
+    })
+    props.onsavedata(expesedata)
+    setenteredtitle('');
+    setenteredAmount('');
+    setenteredDate('');
+  }
+   
 
 
     return(
-        <form  className="expense-form">
+        <form onSubmit={handlerSubmit} className="expense-form">
             <div className="form-input">
               <label>Title</label>
                 <input
@@ -63,8 +63,8 @@ function ExpenseForm(){
                   onChange={datehandler}
                 />
             </div>
-            <button type="submit" onClick={handlerSubmit} className="btn-form">Submit</button>
-        </form>
+            <button type="submit" className="btn-form">Submit</button>
+        </form>      
     )
 }
 export default ExpenseForm
