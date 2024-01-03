@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 import './ExpenseForm.css';
 
 
 function ExpenseForm(){
+  const[title,enteredtitle]=useState('')
+  const[amount,enteredAmount]=useState('')
+  const[date,enteredDate]=useState('')
  
   const titlehandler=(e)=>{
-    console.log(e.target.value)
+    enteredtitle(e.target.value)
+    console.log(title)
   }
   const amounthandler=(e)=>{
-    console.log(e.target.value)
+    enteredAmount(e.target.value)
+    console.log(amount)
   }
   const datehandler=(e)=>{
-    console.log(e.target.value)
+    enteredDate(e.target.value)
+    console.log(date)
   }
 
     return(
@@ -22,6 +28,7 @@ function ExpenseForm(){
                   type="text"
                   placeholder="Title"
                   className="input"
+                  value={title}
                   onChange={titlehandler}
                 />
             </div>
@@ -31,6 +38,7 @@ function ExpenseForm(){
                   type="number"
                   placeholder="Amount"
                   className="input"
+                  value={amount}
                   onChange={amounthandler}
                 />
             </div>
@@ -40,6 +48,7 @@ function ExpenseForm(){
                   type="date"
                   placeholder="date"
                   className="input"
+                  value={date}
                   onChange={datehandler}
                 />
             </div>
