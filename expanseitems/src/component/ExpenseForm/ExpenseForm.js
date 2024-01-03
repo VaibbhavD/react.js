@@ -20,8 +20,19 @@ function ExpenseForm(){
     console.log(enteredDate)
   }
 
+   const handlerSubmit=(e)=>{
+    e.preventDefault()
+    const expensedata={
+    title:enteredtitle,
+    amount:enteredAmount,
+    date:new Date(enteredDate)
+    }
+    console.log(expensedata)
+   }
+
+
     return(
-        <form className="expense-form">
+        <form  className="expense-form">
             <div className="form-input">
               <label>Title</label>
                 <input
@@ -52,7 +63,7 @@ function ExpenseForm(){
                   onChange={datehandler}
                 />
             </div>
-            <button className="btn-form">Submit</button>
+            <button type="submit" onClick={handlerSubmit} className="btn-form">Submit</button>
         </form>
     )
 }
