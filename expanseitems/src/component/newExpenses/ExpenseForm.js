@@ -90,7 +90,10 @@ function ExpenseForm(props){
             <div className="form-input">
               <button type="button"  className="btn-form" onClick={notdisplayForm}>Cancel</button>
               </div>
-        </form>     ):<button onClick={displayForm} className="btn-form">Add Expense</button>}
+        </form>):(<div className="expense-item">
+          <button onClick={displayForm} className="btn-form">Add Expense</button>
+          </div>)
+          }
         </> 
     )
 }

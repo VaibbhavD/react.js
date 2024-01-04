@@ -46,7 +46,7 @@ function App() {
       return (
     <>
      <NewExpense addexpense={addExpenseHandler}/>
-     <hr></hr>
+     
      <div className='display-items'>
      <Expense item={expences}/>
      </div>
