@@ -32,11 +32,8 @@ function ExpenseForm(props){
     props.onsavedata(expesedata)
     setenteredtitle('');
     setenteredAmount('');
-    setenteredDate('');
+    // setenteredDate('');
   }
-
-   
-
    
     return(<>
      

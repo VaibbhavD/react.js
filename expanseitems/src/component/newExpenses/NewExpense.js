@@ -26,7 +26,7 @@ function NewExpense(props){
         {display?(<ExpenseForm onsavedata={saveExpensedata} Oncancel={Canceldisplay}/>)
         :
         (<div className="expense-item-display">
-          <button onClick={displayForm} className="btn-form">Add Expense</button>
+          <button onClick={displayForm} className="AddExpBtn">Add Expense</button>
           </div>)
           }
         </>

@@ -1,24 +1,23 @@
 .expense-form{
-    width: 55rem;
-    height:18rem;
+    width: 30rem;
+    height:30rem;
     text-align: center;
-    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-bottom: 1rem;
     background-color: #21262d;
     /* background-color: #484f58; */
     box-shadow: 0 2px 8px white;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     border-radius: 1rem;
     padding-top: 1.5rem;
-    margin-top: 1.5rem;
+    margin-top:5rem ;
+    margin-left: -2rem;
   }
   .form-input{
     width:fit-content;
-    padding: 1rem;
+    padding: 0.5rem;
     display:flex;
     flex-direction: column;
     margin-top: -1rem;
@@ -51,23 +50,23 @@
     border-radius: 12px;
     margin-top: 1rem;
   }
-  .expense-item-display{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0.5rem;
-    margin: 1rem 0;
-    border-radius: 12px;
-    background-color:#21262d ;
-    /* background-color: #484f58; */
-    border-color: aliceblue;
+  .AddExpBtn{
+    width: 7rem;
+    font-weight: bold;
+    font-size: 1rem;
     color: white;
-    font-size: 18px;
-    width: 60rem;
-    padding: auto;
-    margin-top: 2rem;
-    margin:auto;
-    margin-top: 10px;
-    height: 10rem;
-    margin-bottom: 10.4rem;
+    background-color:#21262d ;
+    border: 1px solid ;
+    padding: 0.9rem 0.8rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+
+  }
+  .expense-item-display{
+   width: 100%;
+   height: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+    
   }

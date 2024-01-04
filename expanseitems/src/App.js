@@ -1,6 +1,7 @@
 import Expense from './component/Expense/Expense'
 import NewExpense from './component/newExpenses/NewExpense';
 import React,{useState} from 'react';
+import './App.css'
 
 
 const Dummy_expens=[
@@ -44,13 +45,14 @@ function App() {
     };
 
       return (
-    <>
-     <NewExpense addexpense={addExpenseHandler}/>
-     
-     <div className='display-items'>
+    <div className='main'>
+      <div className='left'>
+      <NewExpense addexpense={addExpenseHandler}/>
+      </div>
+     <div className='right'>
      <Expense item={expences}/>
      </div>
-    </>
+    </div>
   )
 }
 

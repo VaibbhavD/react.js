@@ -1,0 +1,21 @@
+.main{
+    display: flex;
+    justify-content: space-evenly;
+    justify-content: center;
+    width: 100%;
+}
+.left{
+    width:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.right{
+    width:50%;
+    height:44rem;
+    justify-content: center;
+    align-items: center;
+    padding-right: 2rem;
+    overflow: auto;
+}

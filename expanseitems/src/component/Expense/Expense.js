@@ -1,6 +1,7 @@
-import Expenseitems from "./Expenseitems";
 import { useState } from "react";
 import ExpenceFilter  from './ExpenceFilter'
+import ExpenseList from "./ExpenceList";
+import ExpenseChart from './ExpenseChart'
 
 function Expense(props){
     const[year,setyear]=useState("2021")
@@ -13,17 +14,11 @@ function Expense(props){
     })
 
     return (
-        <>
+        <div className="">
+         <ExpenseChart expences={FilterExpences}/>
         <ExpenceFilter onChangefilter={FilterHandler}  selected={year}/>
-        {FilterExpences.length === 0 ?(
-        <div className="expense-item">
-                <span>No Expences</span>
-        </div>  ):
-        (FilterExpences.map((data)=>(
-             <Expenseitems  date={data.date}   title={data.title} price={data.price} Location={data.Location} key={data.id} />
-        )))
-        }
-        </>
+        <ExpenseList item={FilterExpences}/>
+        </div>
     )
 }
 export default Expense

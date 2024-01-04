@@ -2,8 +2,8 @@
 .expense-date {
     display: flex;
     flex-direction: column;
-    width: 6.5rem;
-    height: 5.5rem;
+    width: 6rem;
+    height: 4rem;
     border: 1px solid #ececec;
     background-color: #2a2a2a;
     color: white;
@@ -14,7 +14,7 @@
   }
   
   .expense-date__month {
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: bold;
   }
   
@@ -23,6 +23,6 @@
   }
   
   .expense-date__day {
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-weight: bold;
   }
