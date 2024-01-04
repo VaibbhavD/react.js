@@ -6,6 +6,7 @@ function ExpenseForm(props){
   const[enteredAmount,setenteredAmount]=useState('')
   const[enteredDate,setenteredDate]=useState('')
   const[location,setlocation]=useState('')
+  const[display,setdisplay]=useState(false)
  
   const titlehandler=(e)=>{
     setenteredtitle(e.target.value)
@@ -33,10 +34,15 @@ function ExpenseForm(props){
     // setenteredAmount('');
     // setenteredDate('');
   }
+  const displayForm=()=>{
+    setdisplay(true)
+  }
+  const notdisplayForm=()=>{
+    setdisplay(false)
+  }
    
-
-
-    return(
+    return(<>
+      {display?(
         <form onSubmit={handlerSubmit} className="expense-form">
             <div className="form-input">
               <label>Title</label>
@@ -81,7 +87,11 @@ function ExpenseForm(props){
             <div className="form-input">
             <button type="submit" className="btn-form">Submit</button>
             </div>
-        </form>      
+            <div className="form-input">
+              <button type="button"  className="btn-form" onClick={notdisplayForm}>Cancel</button>
+              </div>
+        </form>     ):<button onClick={displayForm} className="btn-form">Add Expense</button>}
+        </> 
     )
 }
 export default ExpenseForm
