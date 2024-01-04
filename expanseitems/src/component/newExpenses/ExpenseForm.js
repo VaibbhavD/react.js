@@ -29,9 +29,9 @@ function ExpenseForm(props){
     Location:location
     })
     props.onsavedata(expesedata)
-    setenteredtitle('');
-    setenteredAmount('');
-    setenteredDate('');
+    // setenteredtitle('');
+    // setenteredAmount('');
+    // setenteredDate('');
   }
    
 
