@@ -1,7 +1,9 @@
-import React from "react";
+import React,{useState} from "react";
 import ExpenseForm from "./ExpenseForm";
 
+
 function NewExpense(props){
+    const[display,setdisplay]=useState(false)
 
     const saveExpensedata=(data)=>{
         const expensedata={
@@ -10,10 +12,23 @@ function NewExpense(props){
         }
         props.addexpense(expensedata)
     }
-    return(
 
+    const displayForm=()=>{
+        setdisplay(true)
+      }
+
+    const Canceldisplay=()=>{
+        setdisplay(false)
+    }
+
+    return(
         <>
-        <ExpenseForm onsavedata={saveExpensedata}/>
+        {display?(<ExpenseForm onsavedata={saveExpensedata} Oncancel={Canceldisplay}/>)
+        :
+        (<div className="expense-item-display">
+          <button onClick={displayForm} className="btn-form">Add Expense</button>
+          </div>)
+          }
         </>
     )
 }

@@ -6,7 +6,7 @@ function ExpenseForm(props){
   const[enteredAmount,setenteredAmount]=useState('')
   const[enteredDate,setenteredDate]=useState('')
   const[location,setlocation]=useState('')
-  const[display,setdisplay]=useState(false)
+ 
  
   const titlehandler=(e)=>{
     setenteredtitle(e.target.value)
@@ -30,19 +30,16 @@ function ExpenseForm(props){
     Location:location
     })
     props.onsavedata(expesedata)
-    // setenteredtitle('');
-    // setenteredAmount('');
-    // setenteredDate('');
+    setenteredtitle('');
+    setenteredAmount('');
+    setenteredDate('');
   }
-  const displayForm=()=>{
-    setdisplay(true)
-  }
-  const notdisplayForm=()=>{
-    setdisplay(false)
-  }
+
+   
+
    
     return(<>
-      {display?(
+     
         <form onSubmit={handlerSubmit} className="expense-form">
             <div className="form-input">
               <label>Title</label>
@@ -88,12 +85,9 @@ function ExpenseForm(props){
             <button type="submit" className="btn-form">Submit</button>
             </div>
             <div className="form-input">
-              <button type="button"  className="btn-form" onClick={notdisplayForm}>Cancel</button>
+              <button type="button"  className="btn-form-cancel" onClick={props.Oncancel}>Cancel</button>
               </div>
-        </form>):(<div className="expense-item">
-          <button onClick={displayForm} className="btn-form">Add Expense</button>
-          </div>)
-          }
+        </form>
         </> 
     )
 }

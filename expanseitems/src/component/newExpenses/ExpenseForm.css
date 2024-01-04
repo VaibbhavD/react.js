@@ -40,3 +40,34 @@
     border-radius: 12px;
     margin-top: 1rem;
   }
+  .btn-form-cancel{
+    width: 7rem;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    background-color: rgb(238, 99, 71);
+    border: 1px solid ;
+    padding: 0.9rem 0.8rem;
+    border-radius: 12px;
+    margin-top: 1rem;
+  }
+  .expense-item-display{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 12px;
+    background-color:#21262d ;
+    /* background-color: #484f58; */
+    border-color: aliceblue;
+    color: white;
+    font-size: 18px;
+    width: 60rem;
+    padding: auto;
+    margin-top: 2rem;
+    margin:auto;
+    margin-top: 10px;
+    height: 10rem;
+    margin-bottom: 10.4rem;
+  }

@@ -1,15 +1,27 @@
 .expenses-filter {
     color: white;
-    padding: 0 1rem;
-    margin-top: 2rem;
+    /* padding: 0 1rem; */
+    /* margin-top: 2rem; */
+    display: flex;
+    justify-content: center;
+  
   }
   
   .expenses-filter__control {
     display: flex;
-    width: 100%;
+    flex-wrap:wrap ;
+    width: 60rem;
     align-items: center;
-    justify-content: space-between;
-    margin: 1rem 0;
+    justify-content: end;
+    /* margin: 1rem 0; */
+    height: 3rem;
+    background-color: #21262d;
+    width: 60rem;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+    padding: 0.5rem;
+    margin-bottom: -1rem;
+    margin-top: 3rem;
   }
   
   .expenses-filter label {
