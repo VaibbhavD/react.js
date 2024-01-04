@@ -11,14 +11,19 @@ function Expense(props){
     const FilterExpences=props.item.filter(expence=>{
         return expence.date.getFullYear().toString() === year
     })
-    
+
     return (
         <>
         <ExpenceFilter onChangefilter={FilterHandler}  selected={year}/>
-        {FilterExpences.map((data)=>(
+        {FilterExpences.length === 0 ?(
+        <div className="expense-item">
+                <span>No Expences</span>
+        </div>  ):
+        (FilterExpences.map((data)=>(
              <Expenseitems  date={data.date}   title={data.title} price={data.price} Location={data.Location} key={data.id} />
-        ))}
-           </>
+        )))
+        }
+        </>
     )
 }
 export default Expense

@@ -12,7 +12,7 @@ const Dummy_expens=[
     id:'w'
   },
   {
-    date:new Date(2021,3,11),
+    date:new Date(2022,3,11),
     title:"Health insurance",
     price:1100,
     Location:'LIC',
@@ -26,7 +26,7 @@ const Dummy_expens=[
     id:'r'
   },
   { 
-    date:new Date(2021,5,17),
+    date:new Date(2020,5,17),
     title:"Travel",
     price:1700,
     Location:'Thailand',
