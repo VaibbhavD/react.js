@@ -5,6 +5,7 @@ function ExpenseForm(props){
   const[enteredtitle,setenteredtitle]=useState('')
   const[enteredAmount,setenteredAmount]=useState('')
   const[enteredDate,setenteredDate]=useState('')
+  const[location,setlocation]=useState('')
  
   const titlehandler=(e)=>{
     setenteredtitle(e.target.value)
@@ -15,6 +16,9 @@ function ExpenseForm(props){
   const datehandler=(e)=>{
     setenteredDate(e.target.value)
   }
+  const locationhandler=(e)=>{
+    setlocation(e.target.value)
+  }
 
    const handlerSubmit=(e)=>{
     e.preventDefault()
@@ -22,6 +26,7 @@ function ExpenseForm(props){
     title:enteredtitle,
     price:enteredAmount,
     date:new Date(enteredDate),
+    Location:location
     })
     props.onsavedata(expesedata)
     setenteredtitle('');
@@ -63,7 +68,19 @@ function ExpenseForm(props){
                   onChange={datehandler}
                 />
             </div>
+            <div className="form-input">
+              <label>Location</label>
+                <input
+                  type="text"
+                  placeholder="Location"
+                  className="input"
+                  value={location}
+                  onChange={locationhandler}
+                />
+            </div>
+            <div className="form-input">
             <button type="submit" className="btn-form">Submit</button>
+            </div>
         </form>      
     )
 }
