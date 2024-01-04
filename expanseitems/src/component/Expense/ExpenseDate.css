@@ -15,7 +15,6 @@
   
   .expense-date__month {
     font-size: 0.8rem;
-    font-weight: bold;
   }
   
   .expense-date__year {
@@ -24,5 +23,4 @@
   
   .expense-date__day {
     font-size: 0.7rem;
-    font-weight: bold;
   }
