@@ -9,11 +9,9 @@
   
   .expenses-filter__control {
     display: flex;
-    flex-wrap:wrap ;
+    flex-direction: row-reverse;
     width: 60rem;
     align-items: center;
-    justify-content: end;
-    /* margin: 1rem 0; */
     height: 3rem;
     background-color: #21262d;
     width: 60rem;
