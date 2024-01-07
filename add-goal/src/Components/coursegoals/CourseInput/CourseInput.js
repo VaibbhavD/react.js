@@ -19,9 +19,9 @@ const CourseInput = props => {
     <form onSubmit={formSubmitHandler}>
       <div className="form-control">
         <label>Course Goal</label>
-        <input type="text" onChange={()=>setEnteredValue(e.target.value)} />
+        <input type="text" onChange={(e)=>setEnteredValue(e.target.value)} />
       </div>
-      <Button type="submit">Add Goal</Button>
+      <Button type="submit" item={enteredValue}>Add Goal</Button>
     </form>
   );
 };
