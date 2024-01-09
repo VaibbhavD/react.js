@@ -45,7 +45,7 @@ function InputForm(props) {
     
 
     return (
-      <div className='form'>
+      <div className='form' onClick={onConfirm}>
       {error && <Error title={error.title}  msg={error.msg} onconfirm={onConfirm}/>}
     <form onSubmit={Submithandler} >
         <div className={`form-control }`}>
