@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 // import Inputitem from './inputitem'
 import './Saveinput.css'
 // import { useState } from 'react'
@@ -6,8 +6,8 @@ import './Saveinput.css'
 function Saveinput(props) {
     // const[valid,setvalid]=useState(true)
 
-    return(<>
-        
+    return(
+    <Fragment>
         <ul className="goal-list">
             {props.input.map((input)=>
 
@@ -17,7 +17,7 @@ function Saveinput(props) {
       )
             }
         </ul>
-        </>)
+        </Fragment>)
 }
 
 export default Saveinput

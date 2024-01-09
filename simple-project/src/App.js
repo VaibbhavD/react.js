@@ -25,7 +25,8 @@ function App() {
     content=(<Saveinput input={input}/>
   )}
 
-  return (<>
+  return (
+  <>
   <section id='goal-form'> <InputForm inputdata={inputdata} /></section>
   <section id="goals"> {content} </section>
    
