@@ -8,11 +8,11 @@ function Error(props) {
             <div className="backdrop"  onclick={props.onconfirm}/>
             <div className="modal">
                 <header className="header">
-                    <h1>{props.title}</h1>
+                    <h3>{props.title}</h3>
                 </header>
-                <div className="content">
-                    {props.msg}
-                </div>
+                <main className="content">
+                    <p>{props.msg}</p>
+                </main>
                 <footer className="actions">
                     <button onClick={props.onconfirm} className='button'>Okay</button>
                 </footer>

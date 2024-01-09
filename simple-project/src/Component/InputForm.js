@@ -22,15 +22,15 @@ function InputForm(props) {
         {
           seterror({
             title:"Please Enter Vlaid username",
-            mag:"Chack all the values and input properly!",
+            msg:"Chack all the values and input properly!",
           })
           return;
         }
-        if(age.trim().length<1)
+        else if(age<1)
         {
           seterror({
             title:"Please Enter Vlaid Age",
-            mag:"Chack all the values and input properly!",
+            msg:"Chack all the values and input properly!",
           })
           return;
         }
@@ -45,7 +45,7 @@ function InputForm(props) {
     
 
     return (
-      <div>
+      <div className='form'>
       {error && <Error title={error.title}  msg={error.msg} onconfirm={onConfirm}/>}
     <form onSubmit={Submithandler} >
         <div className={`form-control }`}>
