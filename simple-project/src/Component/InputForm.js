@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState,useRef } from 'react'
 import './inputForm.css'
 import Error from './Error'
 
@@ -7,6 +7,7 @@ function InputForm(props) {
     const[username,setusername]=useState("")
     const[age,setage]=useState("")
     const [error,seterror]=useState()
+    const clgname=useRef();
 
   const nameInputChangeHandler = event => {
     setusername(event.target.value)
@@ -18,6 +19,7 @@ function InputForm(props) {
 
     const Submithandler=(event)=>{
         event.preventDefault();
+        const clg=clgname.current.value;
         if(username.trim().length===0)
         {
           seterror({
@@ -30,12 +32,21 @@ function InputForm(props) {
         {
           seterror({
             title:"Please Enter Vlaid Age",
-            msg:"Chack all the values and input properly!",
+            msg:"Chack all the values and input properly!"
           })
           return;
         }
+        // else if(clg.length===0)
+        // {
+        //   seterror({
+        //     title:"Please Enter Vlaid Collage Name",
+        //     msg:"Chack all the values and input properly!"
+
+        //   })
+        //   return;
+        // }
         else{
-        props.inputdata({text:username,age:age})
+        props.inputdata({text:username,age:age,clg:clg})
 }
     }
 
@@ -53,13 +64,19 @@ function InputForm(props) {
         type="text"
         placeholder='Username'
         value={username}
-        onChange={nameInputChangeHandler}/><br></br>
+        onChange={nameInputChangeHandler}/>
 
         <input
         type="number"
         placeholder='Age'
         value={age}
         onChange={ageInputChangeHandler}/>
+
+        <input
+        type="text"
+        placeholder='Collage Name'
+        ref={clgname}
+        />
 </div>
         <button type='submit' className='button' >Add User</button>
     </form>

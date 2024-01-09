@@ -6,14 +6,14 @@ import { useState } from 'react';
 function App() {
 
   const [input, setinputs] = useState([
-    { text: 'Rahul Patil!', age:26,id: 'g1' },
-    { text: 'Saurabh Nalvade!', age:25,id: 'g2' }
+    { text: 'Rahul Patil!', age:26,id: 'g1',clg:"IIT BomBay"},
+    { text: 'Saurabh Nalvade!', age:25,id: 'g2',clg:"Univarsity of  Karnataka"}
   ]);
 
   const inputdata=(input)=>{
     setinputs((previnput)=>{
       const update=[...previnput];
-      update.unshift({text:input.text,age:input.age ,id:Math.random().toString()})
+      update.unshift({text:input.text,age:input.age,clg:input.clg ,id:Math.random().toString()})
       return update;
     })
   }

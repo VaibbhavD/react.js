@@ -12,7 +12,7 @@ function Saveinput(props) {
             {props.input.map((input)=>
 
               <li  className="goal-item" key={input.id} >
-              Name:{input.text}   Age:{input.age}
+              Name:{input.text}   Age:{input.age}   College:{input.clg}
           </li>
       )
             }

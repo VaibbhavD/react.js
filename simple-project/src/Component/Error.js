@@ -30,6 +30,7 @@ function Error(props) {
     return(
         <Fragment>
             {ReactDOM.createPortal(<Backdrop onClick={props.onconfirm}/>,document.getElementById('backdro-root'))}
+            {ReactDOM.createPortal(<Modaloverlay title={props.title} msg={props.msg}  />,document.getElementById('modal-root'))}
         </Fragment>
         
     )
