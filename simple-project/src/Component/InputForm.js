@@ -1,11 +1,12 @@
 import React from 'react'
 import { useState } from 'react'
-import './inputForm.css';
+import './inputForm.css'
+import Error from './Error'
 
 function InputForm(props) {
     const[username,setusername]=useState("")
     const[age,setage]=useState("")
-    const [isValid,setisValid]=useState(true)
+    const [error,seterror]=useState()
 
   const nameInputChangeHandler = event => {
     setusername(event.target.value)
@@ -17,27 +18,52 @@ function InputForm(props) {
 
     const Submithandler=(event)=>{
         event.preventDefault();
+        if(username.trim().length===0)
+        {
+          seterror({
+            title:"Please Enter Vlaid username",
+            mag:"Chack all the values and input properly!",
+          })
+          return;
+        }
+        if(age.trim().length<1)
+        {
+          seterror({
+            title:"Please Enter Vlaid Age",
+            mag:"Chack all the values and input properly!",
+          })
+          return;
+        }
+        else{
         props.inputdata({text:username,age:age})
+}
+    }
+
+    const onConfirm=()=>{
+      seterror(null)
     }
     
 
-    return (<>
-    <form onSubmit={Submithandler}>
-        <div className={`form-control ${!isValid? 'isValid':''}`}>
+    return (
+      <div>
+      {error && <Error title={error.title}  msg={error.msg} onconfirm={onConfirm}/>}
+    <form onSubmit={Submithandler} >
+        <div className={`form-control }`}>
         <input
         type="text"
         placeholder='Username'
-        onChange={nameInputChangeHandler}/>
+        value={username}
+        onChange={nameInputChangeHandler}/><br></br>
 
         <input
         type="number"
-        placeholder='Username'
+        placeholder='Age'
+        value={age}
         onChange={ageInputChangeHandler}/>
 </div>
-        <button type='submit' >Add User</button>
+        <button type='submit' className='button' >Add User</button>
     </form>
-    </>
-
+    </div>
     )
 }
 export default InputForm

@@ -6,6 +6,7 @@
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
+   
   }
   
   .form-control input {
@@ -15,12 +16,16 @@
     font: inherit;
     line-height: 1.5rem;
     padding: 0 0.25rem;
+    border-radius: 0.5rem;
+    padding: 0.3rem;
+  
   }
   
   .form-control input:focus {
     outline: none;
     background: #fad0ec;
     border-color: #8b005d;
+    
   }
   .form-control.isValid label{
     font-weight: bold;
@@ -35,4 +40,21 @@
     font: inherit;
     line-height: 1.5rem;
     padding: 0 0.25rem;
+  }
+  .button {
+    font: inherit;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #8b005d;
+    color: white;
+    background: #8b005d;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+  }
+  
+  .button:focus {
+    outline: none;
+  }
+  .slider{
+    width:30rem;
+    height:30rem;
   }
