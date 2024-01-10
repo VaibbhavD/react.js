@@ -9,13 +9,15 @@ const Login = (props) => {
   const [emailIsValid, setEmailIsValid] = useState();
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
+  const [collage, setcollage] = useState("");
+  const [collagevalid, setcollageisvalid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
   const emailChangeHandler = (event) => {
     setEnteredEmail(event.target.value);
 
     setFormIsValid(
-      event.target.value.includes('@') && enteredPassword.trim().length > 6
+      event.target.value.includes('@') && enteredPassword.trim().length > 6 && collage.trim().length > 0
     );
   };
 
@@ -23,7 +25,15 @@ const Login = (props) => {
     setEnteredPassword(event.target.value);
 
     setFormIsValid(
-      event.target.value.trim().length > 6 && enteredEmail.includes('@')
+      event.target.value.trim().length > 6 && enteredEmail.includes('@') && collage.trim().length > 0
+    );
+  };
+
+  const collagehandler = (event) => {
+    setcollage(event.target.value);
+
+    setFormIsValid(
+      event.target.value.trim().length > 0 && enteredEmail.includes('@') && enteredPassword.trim().length > 6
     );
   };
 
@@ -35,9 +45,13 @@ const Login = (props) => {
     setPasswordIsValid(enteredPassword.trim().length > 6);
   };
 
+  const validatecollageHandler = () => {
+    setcollageisvalid(collage.trim().length > 0);
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(enteredEmail, enteredPassword);
+    props.onLogin(enteredEmail, enteredPassword,collage);
   };
 
   return (
@@ -69,6 +83,20 @@ const Login = (props) => {
             value={enteredPassword}
             onChange={passwordChangeHandler}
             onBlur={validatePasswordHandler}
+          />
+        </div>
+        <div
+          className={`${classes.control} ${
+            collagevalid === false ? classes.invalid : ''
+          }`}
+        >
+          <label htmlFor="clgname">Collage Name</label>
+          <input
+            type="text"
+            id="clgname"
+            value={collage}
+            onChange={collagehandler}
+           onBlur={validatecollageHandler}
           />
         </div>
         <div className={classes.actions}>
