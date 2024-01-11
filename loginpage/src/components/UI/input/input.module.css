@@ -10,9 +10,9 @@
   display: flex;
   align-items: stretch;
   flex-direction: column;
+  justify-content: center;
 }
 
-.control label,
 .control input {
   display: block;
 }
@@ -30,6 +30,7 @@
   padding: 0.35rem 0.35rem;
   border-radius: 6px;
   border: 1px solid #ccc;
+  width: 80%;
 }
 
 .control input:focus {
