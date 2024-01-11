@@ -3,7 +3,7 @@ import React from 'react';
 import classes from './Navigation.module.css';
 import AuthLogin from '../../store/auth';
 
-const Navigation = (props) => {
+const Navigation = () => {
   return (
     <AuthLogin.Consumer>
       {(context)=>{

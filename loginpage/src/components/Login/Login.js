@@ -24,7 +24,7 @@ const passwordReducer=(state,action)=>{
   }
    if(action.type ==='Input_Blur')
   {
-    return {value:state.value,isValid:state.value.includes('@')}
+    return {value:state.value,isValid:state.value.trim().length>6}
   }
   return {value:'',isValid:false}
 
@@ -40,7 +40,7 @@ const Login = (props) => {
   const [formIsValid, setFormIsValid] = useState(false);
 
   const[emailstate,diaspatchemail]=useReducer(emailReducer,{value:'',isVlaid:false})
-  const[passwordstate,dispatchpassword]=useReducer(emailReducer,{value:'',isVlaid:false})
+  const[passwordstate,dispatchpassword]=useReducer(passwordReducer,{value:'',isVlaid:false})
 
 
   const emailChangeHandler = (event) => {

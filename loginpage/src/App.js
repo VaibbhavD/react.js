@@ -33,10 +33,10 @@ function App() {
       isLoggedIn:isLoggedIn,
       Logout:logoutHandler
     }}>
-      <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
+      <MainHeader/>
       <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
-        {isLoggedIn && <Home onLogout={logoutHandler} />}
+        {isLoggedIn && <Home/>}
       </main>
     </AuthLogin.Provider>
   );
