@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Login from './components/Login/Login.js';
 import Home from './components/Home/Home';
 import MainHeader from './components/Mainheader/MainHeader';
+import AuthLogin from './store/auth.js';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,13 +29,16 @@ function App() {
   };
 
   return (
-    <React.Fragment>
+    <AuthLogin.Provider value={{
+      isLoggedIn:isLoggedIn,
+      Logout:logoutHandler
+    }}>
       <MainHeader isAuthenticated={isLoggedIn} onLogout={logoutHandler} />
       <main>
         {!isLoggedIn && <Login onLogin={loginHandler} />}
         {isLoggedIn && <Home onLogout={logoutHandler} />}
       </main>
-    </React.Fragment>
+    </AuthLogin.Provider>
   );
 }
 
