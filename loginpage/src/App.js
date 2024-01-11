@@ -31,11 +31,12 @@ function App() {
   return (
     <AuthLogin.Provider value={{
       isLoggedIn:isLoggedIn,
+      Login:loginHandler,
       Logout:logoutHandler
     }}>
       <MainHeader/>
       <main>
-        {!isLoggedIn && <Login onLogin={loginHandler} />}
+        {!isLoggedIn && <Login/>}
         {isLoggedIn && <Home/>}
       </main>
     </AuthLogin.Provider>

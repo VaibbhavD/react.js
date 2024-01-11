@@ -1,8 +1,9 @@
-import React, { useEffect, useReducer, useState } from 'react';
+import React, { useContext, useEffect, useReducer, useState } from 'react';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/button/Button';
+import AuthLogin from '../../store/auth';
 
 
 const emailReducer=(state,action)=>{
@@ -101,11 +102,16 @@ const Login = (props) => {
     setcollageisvalid(collage.trim().length > 0);
   };
 
+
+  const login=useContext(AuthLogin)
   
+
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(emailstate.value, passwordstate.value,collage);
+    login.Login(emailstate.value, passwordstate.value,collage);
   };
+
+  
 
   return (
     <Card className={classes.login}>
