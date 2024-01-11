@@ -1,9 +1,9 @@
 import React, { useContext,useReducer, useState } from 'react';
-
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/button/Button';
 import AuthContext from '../../store/auth';
+import Input from '../UI/input/input';
 
 
 const emailReducer=(state,action)=>{
@@ -100,7 +100,7 @@ const Login = (props) => {
           }`}
         >
           <label htmlFor="email">E-Mail</label>
-          <input
+          <Input
             type="email"
             id="email"
             value={emailstate.value}
@@ -114,7 +114,7 @@ const Login = (props) => {
           }`}
         >
           <label htmlFor="password">Password</label>
-          <input
+          <Input
             type="password"
             id="password"
             value={passwordstate.value}
@@ -128,7 +128,7 @@ const Login = (props) => {
           }`}
         >
           <label htmlFor="clgname">Collage Name</label>
-          <input
+          <Input
             type="text"
             id="clgname"
             value={collage}
