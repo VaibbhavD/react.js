@@ -1,9 +1,9 @@
-import React, { useContext, useEffect, useReducer, useState } from 'react';
+import React, { useContext,useReducer, useState } from 'react';
 
 import Card from '../UI/Card/Card';
 import classes from './Login.module.css';
 import Button from '../UI/button/Button';
-import AuthLogin from '../../store/auth';
+import AuthContext from '../../store/auth';
 
 
 const emailReducer=(state,action)=>{
@@ -32,10 +32,6 @@ const passwordReducer=(state,action)=>{
 }
 
 const Login = (props) => {
-  // const [enteredEmail, setEnteredEmail] = useState('');
-  // const [emailIsValid, setEmailIsValid] = useState();
-  // const [enteredPassword, setEnteredPassword] = useState('');
-  // const [passwordIsValid, setPasswordIsValid] = useState();
   const [collage, setcollage] = useState("");
   const [collagevalid, setcollageisvalid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
@@ -45,7 +41,6 @@ const Login = (props) => {
 
 
   const emailChangeHandler = (event) => {
-    // setEnteredEmail(event.target.value);
     diaspatchemail({type:'Input_User',value:event.target.value},)
 
     setFormIsValid(
@@ -55,7 +50,6 @@ const Login = (props) => {
   };
 
   const passwordChangeHandler = (event) => {
-    // setEnteredPassword(event.target.value);
     dispatchpassword({type:'Input_User',value:event.target.value},)
 
     setFormIsValid(
@@ -73,28 +67,13 @@ const Login = (props) => {
     return;
   };
 
-  // useEffect(()=>{
-  //   const identifier= setTimeout(() => {
-  //     console.log("effect")
-  //      setFormIsValid(
-  //       collage.trim().length > 0 && enteredEmail.includes('@') && enteredPassword.trim().length > 6
-  //     );
-  //   }, 500);
-
-  //   return ()=>{
-  //     console.log("cleanup")
-  //     clearTimeout(identifier)
-  //   }
-  // }
-  // ,[collage,enteredEmail,enteredPassword])
+ 
 
   const validateEmailHandler = () => {
-    // setEmailIsValid(emailstate.isValid);
     diaspatchemail({type:'Input_Blur'})
   };
 
   const validatePasswordHandler = () => {
-    // setPasswordIsValid(enteredPassword.trim().length > 6);
     dispatchpassword({type:'Input_Blur'})
   };
 
@@ -103,12 +82,11 @@ const Login = (props) => {
   };
 
 
-  const login=useContext(AuthLogin)
-  
+  const Context=useContext(AuthContext)  
 
   const submitHandler = (event) => {
     event.preventDefault();
-    login.Login(emailstate.value, passwordstate.value,collage);
+    Context.onLogin(emailstate.value, passwordstate.value);
   };
 
   
