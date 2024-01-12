@@ -2,7 +2,7 @@ import './App.css';
 import React,{useState} from 'react';
 import InputForm from './Component/Form/inputform';
 import Saveproducts from './Component/Product/Saveproducts';
-// import ProductValue from './Component/Product/ProductValue';
+import Card from './Component/UI/Card';
 
 function App() {
 
@@ -28,12 +28,12 @@ function App() {
    }
 
   return (
-    <>
+    <Card>
     <InputForm addproduct={addproduct}/>
     <h1>Products</h1>
    <Saveproducts products={products} deleteProduct={deleteProduct}/>
-    <h4>Total Worth of Products :<b>{Worth}</b></h4>
-    </>
+    <h4>Total Worth of Products : Rs <b>{Worth}</b></h4>
+    </Card>
   );
 }
 
