@@ -1,4 +1,5 @@
 import React from "react";
+import './product.css'
 
 const Product=(props)=>{
 
@@ -7,9 +8,9 @@ const Product=(props)=>{
     }
 
     return(
-        <li key={props.item.ProductId}>
-                    {props.item.ProductId}  {props.item.Price}  {props.item.Name} 
-                    <button onClick={deletehandler}>Delete</button>
+        <li key={props.item.ProductId} className="product">
+                   <p>ID- {props.item.ProductId} </p>   <p>Price- Rs.{props.item.Price}</p> <p>Name- {props.item.Name}</p> 
+                    <button onClick={deletehandler} className="btn">Delete</button>
                 </li>
     )
 }

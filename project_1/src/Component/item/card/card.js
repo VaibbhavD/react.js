@@ -1,8 +1,9 @@
 import React from "react";
 
-const Card=()=>{
+const Card=(porps)=>{
 
     return (
-        <div></div>
+        <div className={`${porps.className}`}>{porps.children}</div>
     )
 }
+export default Card

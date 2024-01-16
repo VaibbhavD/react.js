@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import Card from '../item/card/card'
+import classes from './inputform.module.css';
 
 const InputForm=(props)=>{
     const[ProductId,setProductId]=useState('')
@@ -39,8 +41,8 @@ const InputForm=(props)=>{
 
 
     return(
-        <>
-        <form onSubmit={SubmitHandler}>
+        <Card className={classes.login}>
+        <form onSubmit={SubmitHandler} className={classes.control}>
             <div>
             <label htmlFor='product'>Product Id</label>
             <input
@@ -75,7 +77,7 @@ const InputForm=(props)=>{
                 <button>Add Product</button>
             </div>
         </form>
-            </>
+            </Card>
     )
 }
 export default InputForm

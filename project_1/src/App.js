@@ -7,7 +7,7 @@ import Card from './Component/UI/Card';
 function App() {
 
   const[products,setProducts]=useState([])
-  const[Worth,setworth]=useState(null)
+  const[Worth,setworth]=useState(0)
 
   let sum;
 
@@ -30,9 +30,8 @@ function App() {
   return (
     <Card>
     <InputForm addproduct={addproduct}/>
-    <h1>Products</h1>
    <Saveproducts products={products} deleteProduct={deleteProduct}/>
-    <h4>Total Worth of Products : Rs <b>{Worth}</b></h4>
+    <h4 className='worth'>Total Worth of Products Rs- <b>{Worth}</b></h4>
     </Card>
   );
 }

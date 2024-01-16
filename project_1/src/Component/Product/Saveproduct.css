@@ -1,0 +1,32 @@
+.product-list {
+    list-style: none;
+    margin: auto;
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 20rem;
+    overflow: auto;
+    text-align: center;
+  }
+  .title{
+    text-align: center;
+    color:#394F8f;
+  }
+  .no-porduct{
+    font-size: x-large;
+    text-align: center;
+  }
+  .productpage{
+    margin: 1rem 0;
+    background: #EAD6CD;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    color: white;
+    /* padding: 0.5rem 1rem; */
+    /* cursor: pointer; */
+    width: 50%;
+    margin: auto;
+    height: 27rem;
+    border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  padding-top: 0.1rem;
+  }

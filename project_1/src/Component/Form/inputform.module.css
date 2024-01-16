@@ -1,0 +1,77 @@
+.login {
+    width: 90%;
+    height: 50%;
+    max-width: 55rem;
+    margin: 2rem auto;
+    /* padding: 1rem; */
+  }
+  
+  .control {
+    margin: 1rem 0;
+    display: flex;
+    align-items: stretch;
+    flex-direction: column;
+    background-color: #394F8A;
+    padding: 2rem;
+    border-radius: 1rem;
+  }
+  
+  .control label,
+  .control input {
+    display: block;
+    margin: 1rem;
+  }
+  
+  .control label {
+    font-weight: bold;
+    flex: 1;
+    color: aliceblue;;
+    margin-bottom: 0.5rem;
+    text-align: center;
+  }
+  
+  .control input {
+    flex: 3;
+    font: inherit;
+    padding: 0.35rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid #EAD6CD;
+    background: #EAD6CD;
+    width: 90%;
+    margin-right: 4rem;
+    color: black;
+  }
+  .control button{
+    padding: 0.3rem;
+    border-radius: 6px;
+    margin-top: 2.5rem;
+    background-color: #FF6A3D;
+    font-weight: bold;
+    margin-left: 2rem;
+    color: #fbdada;
+    cursor: pointer;
+    border-color: white;
+  }
+  
+  .control input:focus {
+    outline: none;
+    border-color: #4f005f;
+    background: #f6dbfc;
+  }
+  
+  .control.invalid input {
+    border-color: red;
+    background: #fbdada;
+  }
+  
+  .actions {
+    text-align: center;
+  }
+  
+  @media (min-width: 768px) {
+    .control {
+      align-items: center;
+      flex-direction: row;
+    }
+  
+  }

@@ -1,0 +1,27 @@
+.product {
+    margin: 1rem 0;
+    background: #394F8A;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+    color: white;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    width: 40rem;
+    margin: auto;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: medium;
+    border-radius: 1rem;
+  }
+  .btn{
+  border-radius: 6px;
+  background: #FF6A3D;
+  font-weight: bold;
+  /* padding: 0.6rem; */
+  height: 2.5rem;
+  margin-top: 0.4rem;
+  width: 5rem;
+  border-color: white;
+  color: white;
+  cursor: pointer;
+}
