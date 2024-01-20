@@ -46,7 +46,7 @@ const InputForm=(props)=>{
             <div>
             <label htmlFor='product'>Product Id</label>
             <input
-                type="number"
+                type="text"
                 placeholder='Product ID'
                 id="product"
                 value={ProductId}

@@ -8,7 +8,7 @@ const Product=(props)=>{
     }
 
     return(
-        <li key={props.item.ProductId} className="product">
+        <li className="product">
                    <p>ID- {props.item.ProductId} </p>   <p>Price- Rs.{props.item.Price}</p> <p>Name- {props.item.Name}</p> 
                     <button onClick={deletehandler} className="btn">Delete</button>
                 </li>
