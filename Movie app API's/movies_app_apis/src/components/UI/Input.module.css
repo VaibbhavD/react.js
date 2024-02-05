@@ -1,0 +1,20 @@
+.div {
+  width: 100%;
+}
+.div input {
+  padding: 0.7rem;
+  width: 80%;
+  margin: 0.4rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+.div label {
+  font-weight: bold;
+}
+.div div {
+  margin-left: 3.7rem;
+  text-align: left;
+}
+.text {
+  height: 10rem;
+}

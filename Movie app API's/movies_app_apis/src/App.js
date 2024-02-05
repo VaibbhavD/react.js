@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import MoviesList from "./components/MoviesList";
 import "./App.css";
+import Form from "./components/Form/AddMovieForm";
 
 function App() {
   const [Movies, setMovies] = useState([]);
@@ -37,6 +38,10 @@ function App() {
     []
   );
 
+  const AddMovie = (movie) => {
+    setMovies((prev) => [movie, ...prev]);
+  };
+
   let content = <h3>No Found Movies</h3>;
 
   if (Movies.length > 0) {
@@ -69,7 +74,8 @@ function App() {
   return (
     <React.Fragment>
       <section>
-        <button>Fetch Movies</button>
+        <Form AddMovie={AddMovie} />
+        {/* <button>Fetch Movies</button> */}
       </section>
       <section>{content}</section>
     </React.Fragment>
