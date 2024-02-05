@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MoviesList from "./components/MoviesList";
 import "./App.css";
 
@@ -7,31 +7,35 @@ function App() {
   const [loading, setloading] = useState(false);
   const [error, seterror] = useState(null);
 
-  async function submithandler() {
-    setloading(true);
-    seterror(null);
-    try {
-      const response = await fetch("https://swapi.dev/api/films");
+  useEffect(
+    () =>
+      async function submithandler() {
+        setloading(true);
+        seterror(null);
+        try {
+          const response = await fetch("https://swapi.dev/api/films");
 
-      if (!response.ok) {
-        throw new Error("'Something went wrong ....Retrying' !");
-      }
+          if (!response.ok) {
+            throw new Error("'Something went wrong ....Retrying' !");
+          }
 
-      const data = await response.json();
-      const temp = data.results.map((item) => {
-        return {
-          id: item.episode_id,
-          title: item.title,
-          openingText: item.opening_crawl,
-          releaseDate: item.release_date,
-        };
-      });
-      setMovies(temp);
-    } catch (error) {
-      seterror(error.message);
-    }
-    setloading(false);
-  }
+          const data = await response.json();
+          const temp = data.results.map((item) => {
+            return {
+              id: item.episode_id,
+              title: item.title,
+              openingText: item.opening_crawl,
+              releaseDate: item.release_date,
+            };
+          });
+          setMovies(temp);
+        } catch (error) {
+          seterror(error.message);
+        }
+        setloading(false);
+      },
+    []
+  );
 
   let content = <h3>No Found Movies</h3>;
 
@@ -65,7 +69,7 @@ function App() {
   return (
     <React.Fragment>
       <section>
-        <button onClick={submithandler}>Fetch Movies</button>
+        <button>Fetch Movies</button>
       </section>
       <section>{content}</section>
     </React.Fragment>
