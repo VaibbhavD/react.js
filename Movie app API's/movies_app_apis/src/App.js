@@ -47,15 +47,14 @@ function App() {
         {
           method: "POST",
           body: JSON.stringify(movie),
-          headers: {
-            "Content-type": "application/json",
-          },
+          id: movie.id,
         }
       );
       if (!response.ok) {
         throw new Error("'Something went wrong ....Retrying' !");
       }
       const data = await response.json();
+      console.log(data);
       fetchmoviehandler();
     } catch (error) {
       seterror(error.message);

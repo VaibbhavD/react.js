@@ -11,7 +11,6 @@ const Form = (props) => {
       openingText: e.target.text.value,
       releaseDate: e.target.date.value,
     };
-
     props.AddMovie(movie);
   };
 
