@@ -1,10 +1,12 @@
 import { useContext, useRef } from "react";
 import classes from "./ProfileForm.module.css";
 import { AuthContext } from "../../Store/Auth-Context";
+import { useNavigate } from "react-router-dom";
 
 const ProfileForm = () => {
   const PasswordRef = useRef();
   const context = useContext(AuthContext);
+  const Navigate = useNavigate();
 
   const SubmitHandler = (e) => {
     e.preventDefault();
@@ -24,7 +26,8 @@ const ProfileForm = () => {
     )
       .then((res) => {
         if (res.ok) {
-          alert("Password Changed Successfully !");
+          Navigate("/");
+          // alert("Password Changed Successfully !");
         } else {
           res.json().then((data) => {
             let message = "Failed";

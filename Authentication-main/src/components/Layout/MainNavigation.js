@@ -1,10 +1,11 @@
-import { Link, NavLink, Navigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Store/Auth-Context";
 import classes from "./MainNavigation.module.css";
 import { useContext } from "react";
 
 const MainNavigation = () => {
   const context = useContext(AuthContext);
+  const Navigate = useNavigate();
 
   return (
     <header className={classes.header}>
@@ -24,7 +25,14 @@ const MainNavigation = () => {
                 <NavLink to="/profile">Profile</NavLink>
               </li>
               <li>
-                <button onClick={() => context.Logout()}>Logout</button>
+                <button
+                  onClick={() => {
+                    context.Logout();
+                    Navigate("auth");
+                  }}
+                >
+                  Logout
+                </button>
               </li>
             </>
           )}

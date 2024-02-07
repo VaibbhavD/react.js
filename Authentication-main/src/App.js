@@ -9,7 +9,7 @@ function App() {
     <Layout>
       <main>
         <Routes>
-          <Route path="/" element={<HomePage />} exact />
+          <Route path="/" element={<HomePage />} />
           <Route path="/auth" element={<AuthPage />} />
           <Route path="/profile" element={<UserProfile />} />
         </Routes>
