@@ -1,4 +1,4 @@
-import { useState, useRef, useContext } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Store/Auth-Context";
 import classes from "./AuthForm.module.css";
@@ -49,6 +49,7 @@ const AuthForm = () => {
           res.json().then((data) => {
             if (isLogin) {
               context.Login(data.idToken);
+              Autologout();
               Navigate("/");
             }
           });
@@ -78,6 +79,12 @@ const AuthForm = () => {
       <div></div>
     </div>
   );
+
+  const Autologout = () => {
+    setTimeout(() => {
+      context.Logout();
+    }, 60000);
+  };
 
   return (
     <section className={classes.auth}>
