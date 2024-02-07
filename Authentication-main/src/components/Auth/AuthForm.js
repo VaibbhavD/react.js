@@ -4,6 +4,7 @@ import classes from "./AuthForm.module.css";
 
 const AuthForm = () => {
   const [isLogin, setIsLogin] = useState(true);
+  const [loading, setloading] = useState(false);
   const emailref = useRef();
   const passwordref = useRef();
 
@@ -13,6 +14,7 @@ const AuthForm = () => {
 
   const SubmitHandler = (e) => {
     e.preventDefault();
+    setloading(true);
 
     const Enteredemail = emailref.current.value;
     const Enteredpassword = passwordref.current.value;
@@ -43,6 +45,7 @@ const AuthForm = () => {
         if (res.ok) {
           res.json().then((data) => console.log(data.idToken));
           alert(message);
+          setloading(false);
         } else {
           return res.json().then((data) => {
             let message = "Authentication Failed !";
@@ -50,6 +53,7 @@ const AuthForm = () => {
               message = data.error.message;
             }
             alert(message);
+            setloading(false);
           });
         }
       })
@@ -57,6 +61,15 @@ const AuthForm = () => {
         // console.log(error.message);
       });
   };
+
+  const SpinLoader = (
+    <div className={classes.ldsring}>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  );
 
   return (
     <section className={classes.auth}>
@@ -71,7 +84,15 @@ const AuthForm = () => {
           <input type="password" id="password" ref={passwordref} required />
         </div>
         <div className={classes.actions}>
-          <button type="submit">{isLogin ? "Login" : "Sign Up"}</button>
+          <button type="submit">
+            {loading === true ? (
+              <>{SpinLoader}</>
+            ) : isLogin ? (
+              "Login"
+            ) : (
+              "Sign Up"
+            )}
+          </button>
           <button
             type="button"
             className={classes.toggle}
