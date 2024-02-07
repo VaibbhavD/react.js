@@ -28,7 +28,7 @@ const MainNavigation = () => {
                 <button
                   onClick={() => {
                     context.Logout();
-                    Navigate("auth");
+                    Navigate("/auth");
                   }}
                 >
                   Logout
